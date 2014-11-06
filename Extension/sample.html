@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<script src="jquery.js"></script>
+<script>
+$(document).ready(function(){
+    $('#values_list li').hover(function(){
+     $('#values_list li').removeClass('active');
+        var item = $(this);
+          item.addClass('active');
+          $('#user_title').html(item.attr('data-title'));
+          $('#user_value').html(item.attr('data-value'));
+          
+          if(item.attr('data-caps')){
+            $('#user_value').css({'text-transform': 'lowercase'});
+          } else {
+            $('#user_value').css({'text-transform': 'capitalize'});
+          }
+    });
+});
+</script>
+</head>
+<body>
+<header id="special">
+ <h1>Siva Phaneendra Babu Dandu</h1>
+</header>
+<div class="frame card_offset">
+		<div class="card">
+			<div class="details">
+				<div class="user_photo horizontal_center" id="user_photo">
+				<img src="img/Siva_Phaneendra.jpg">
+			       </div>
+			    <p id="user_title">Hi, My name is</p>
+			    <p id="user_value" style="text-transform: capitalize;">Siva Phaneendra Babu Dandu</p>
+			</div>
+
+			<ul class="values_list horizontal_center" id="values_list">
+		<li data-title="Hi, My name is" data-value="Siva Phaneendra Babu" data-label="name" class="active"></li>
+		<li data-title="My email address is" data-value="sivaphaneendra1@gmail.com" data-label="email" data-caps="false" class=""></li>
+		<li data-title="My birthday is" data-value="06/10/1992" data-label="birthday" class=""></li>
+		<li data-title="My address is" data-value="Ongole AndhraPradesh" data-label="location" class=""></li>
+		<li data-title="My phone number is" data-value="+91-8497964186" data-label="phone" class=""></li>
+		<li data-title="My passport no is" data-value="L9590135" data-label="pass" class=""></li>
+			</ul>
+		</div>
+  
+		
+	</div>
+</body>
+</html>
